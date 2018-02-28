@@ -413,6 +413,8 @@ int event_base_once (struct event_base *base, int fd, short events, void (*cb)(i
 
   ev_once (EV_A_ fd, events & (EV_READ | EV_WRITE), ev_tv_get (tv), ev_x_once_cb, (void *)once);
 
+  free (once);
+
   return 0;
 }
 
