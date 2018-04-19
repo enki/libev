@@ -46,6 +46,10 @@
 # endif
 #endif
 
+#if defined(__ANDROID__) || defined(ANDROID)
+typedef int fd_mask;
+#endif
+
 #ifndef EV_SELECT_USE_FD_SET
 # ifdef NFDBITS
 #  define EV_SELECT_USE_FD_SET 0
